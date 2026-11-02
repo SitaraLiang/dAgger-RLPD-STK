@@ -1,10 +1,17 @@
 [project]
 name = "dagger-rlpd-stk"
 version = "0.1.0"
-description = "Add your description here"
+description = "DAgger vs symmetric sampling (RLPD) in SuperTuxKart"
 readme = "README.md"
-authors = []
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
+    "numpy",
+    "omegaconf",     
+    "pandas",      
+    "plotly",  
     "pystk2-gymnasium[cli,web]==0.10.0",
+    "torch",
 ]
+
+[tool.uv]
+package = false
