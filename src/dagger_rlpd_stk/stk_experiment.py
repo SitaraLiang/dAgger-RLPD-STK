@@ -12,9 +12,9 @@ from typing import Any
 import gymnasium as gym
 import numpy as np
 import torch
-from pystk2_gymnasium import AgentSpec
 from tqdm.auto import trange
 
+from dagger_rlpd_stk.env import make_env
 from dagger_rlpd_stk.dagger import DAggerConfig, run_dagger
 from dagger_rlpd_stk.observations import ContinuousObservationNormalizer
 from dagger_rlpd_stk.replay_buffer import (
@@ -27,7 +27,6 @@ from dagger_rlpd_stk.stk_rlpd_wrapper import STKRLPDWrapper
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PYSTK_SOURCE = PROJECT_ROOT / "pystk_project" / "src"
-ENV_NAME = "supertuxkart/flattened_continuous_actions-v0"
 
 
 def agent3_class():
@@ -41,13 +40,7 @@ def agent3_class():
 
 
 def make_stk_env(track: str, player_name: str, render_mode=None):
-    env = gym.make(
-        ENV_NAME,
-        render_mode=render_mode,
-        track=track,
-        agent=AgentSpec(name=player_name, rank_start=0),
-    )
-    return STKRLPDWrapper(env)
+    return STKRLPDWrapper(make_env(track=track, render_mode=render_mode))
 
 
 def agent3_action(action) -> np.ndarray:
