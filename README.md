@@ -18,6 +18,26 @@ uv run stk-rlpd --seed 0
 Use `uv run stk-dagger --help` or `uv run stk-rlpd --help` to see the
 algorithm-specific options.
 
+### Remote RLPD runs
+
+Set the machines, seeds, and default remote checkout path in
+`scripts/remote_config.sh`, then launch one seed per machine:
+
+```sh
+./scripts/launch_remote.sh
+```
+
+Additional options are forwarded to `stk-rlpd` on every machine:
+
+```sh
+./scripts/launch_remote.sh --rlpd-timesteps 500000 --track abyss
+```
+
+The launcher changes to `/Vrac/21500050/dAgger-RLPD-STK` on every remote
+machine before starting the run. Runs use tmux sessions named
+`rlpd-seed-<seed>` and write results beneath `results/stk/rlpd`. Stop all
+configured remote sessions with `./scripts/close_remote.sh`.
+
 To run DAgger, you will need an expert policy. You can use any policy available in this project:
 
 https://github.com/osigaud/pystk_project/tree/master/src/agents
