@@ -38,6 +38,9 @@ machine before starting the run. Runs use tmux sessions named
 `rlpd-seed-<seed>` and write results beneath `results/stk/rlpd`. Stop all
 configured remote sessions with `./scripts/close_remote.sh`.
 
+Each run also writes its console output to
+`results/remote_logs/rlpd-seed-<seed>.log` on its remote machine.
+
 To run DAgger, you will need an expert policy. You can use any policy available in this project:
 
 https://github.com/osigaud/pystk_project/tree/master/src/agents
