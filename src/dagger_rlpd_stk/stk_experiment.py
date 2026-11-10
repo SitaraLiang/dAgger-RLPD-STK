@@ -9,13 +9,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-import gymnasium as gym
 import numpy as np
 import torch
 from tqdm.auto import trange
 
-from dagger_rlpd_stk.env import make_env
 from dagger_rlpd_stk.dagger import DAggerConfig, run_dagger
+from dagger_rlpd_stk.env import make_env
 from dagger_rlpd_stk.observations import ContinuousObservationNormalizer
 from dagger_rlpd_stk.replay_buffer import (
     ReplayBuffer,
