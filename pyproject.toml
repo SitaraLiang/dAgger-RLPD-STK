@@ -1,17 +1,45 @@
+# [project]
+# name = "dagger-rlpd-stk"
+# version = "0.1.0"
+# description = "DAgger vs symmetric sampling (RLPD) in SuperTuxKart"
+# readme = "README.md"
+# requires-python = ">=3.12,<3.13"
+# dependencies = [
+#     "numpy",
+#     "omegaconf",
+#     "pandas",
+#     "plotly",
+#     "pystk2-gymnasium[cli,web]==0.10.0",
+#     "torch",
+# ]
+
+# [tool.uv]
+# package = false
+
 [project]
 name = "dagger-rlpd-stk"
 version = "0.1.0"
-description = "DAgger vs symmetric sampling (RLPD) in SuperTuxKart"
+description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12,<3.13"
+requires-python = ">=3.13"
 dependencies = [
-    "numpy",
-    "omegaconf",     
-    "pandas",      
-    "plotly",  
-    "pystk2-gymnasium[cli,web]==0.10.0",
-    "torch",
+    "gymnasium[box2d]>=1.4.0",
+    "ipykernel>=7.4.0",
+    "ipywidgets>=8.1.9",
+    "numpy>=2.5.4",
+    "omegaconf>=2.4.0",
+    "pandas>=3.1.1",
+    "plotly>=7.1.0",
+    "pystk2-gymnasium[cli,web]>=0.10.0",
+    "swig>=4.5.1",
+    "tensorboard>=2.21.0",
+    "torch>=2.15.0",
+    "tqdm>=4.70.1",
 ]
 
-[tool.uv]
-package = false
+[project.scripts]
+stk-experiment = "dagger_rlpd_stk.stk_experiment:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
