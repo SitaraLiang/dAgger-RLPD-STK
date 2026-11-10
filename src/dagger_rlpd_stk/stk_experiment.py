@@ -177,7 +177,7 @@ def parse_args(argv=None):
     parser.add_argument("--track", default="abyss")
     parser.add_argument("--player-name", default="Jean")
     parser.add_argument("--offline-transitions", type=int, default=100_000)
-    parser.add_argument("--dagger-iterations", type=int, default=50)
+    parser.add_argument("--dagger-iterations", type=int, default=20)
     parser.add_argument("--dagger-beta", type=float, default=0.0)
     parser.add_argument("--ridge-lambda", type=float, default=1e-3)
     parser.add_argument("--rlpd-timesteps", type=int, default=500_000)
