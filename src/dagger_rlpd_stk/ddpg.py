@@ -152,7 +152,13 @@ def run_ddpg(
     evaluations = [evaluate(policy, evaluation_env, config.eval_episodes)]
 
     with SummaryWriter(timestamped_log_dir(log_dir)) as writer:
-        writer.add_scalar("evaluation/return", evaluations[0], 0)
+        writer.add_scalar("evaluation/return", evaluations[0]["mean_return"], 0)
+        if evaluations[0]["mean_completion_length"] is not None:
+            writer.add_scalar(
+                "evaluation/completion_length",
+                evaluations[0]["mean_completion_length"],
+                0,
+            )
         state, _ = env.reset(seed=config.seed)
         episode_return = 0.0
         episode_timesteps = 0
@@ -200,8 +206,19 @@ def run_ddpg(
             if timestep % config.eval_freq == 0:
                 evaluation = evaluate(policy, evaluation_env, config.eval_episodes)
                 evaluations.append(evaluation)
-                writer.add_scalar("evaluation/return", evaluation, timestep)
-                progress.set_postfix(evaluation_return=f"{evaluation:.2f}")
+                writer.add_scalar(
+                    "evaluation/return", evaluation["mean_return"], timestep
+                )
+                if evaluation["mean_completion_length"] is not None:
+                    writer.add_scalar(
+                        "evaluation/completion_length",
+                        evaluation["mean_completion_length"],
+                        timestep,
+                    )
+                progress.set_postfix(
+                    evaluation_return=f"{evaluation['mean_return']:.2f}",
+                    completion_length=evaluation["mean_completion_length"],
+                )
 
     if save_results is not None:
         torch.save(evaluations, save_results)
