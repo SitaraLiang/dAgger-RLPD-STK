@@ -6,6 +6,18 @@ Mini-project 2: DAgger vs symmetric sampling in Super Tux Kart
 
 The goal of this project is to investigate the relative performance of DAgger and symmetric sampling (from RLPD) in Super Tux Kart driving agents.
 
+## Running the experiments
+
+Run each algorithm independently with a required random seed:
+
+```sh
+uv run stk-dagger --seed 0
+uv run stk-rlpd --seed 0
+```
+
+Use `uv run stk-dagger --help` or `uv run stk-rlpd --help` to see the
+algorithm-specific options.
+
 To run DAgger, you will need an expert policy. You can use any policy available in this project:
 
 https://github.com/osigaud/pystk_project/tree/master/src/agents

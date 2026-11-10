@@ -1,4 +1,4 @@
-from dagger_rlpd_stk.dagger import DAggerConfig, DAggerPolicy, run_dagger, train_dagger
+from dagger_rlpd_stk.dagger import DAggerConfig, DAggerPolicy, run_dagger
 from dagger_rlpd_stk.ddpg import DDPG, DDPGConfig, run_ddpg
 from dagger_rlpd_stk.models import Actor, Critic, SquashedGaussianActor
 from dagger_rlpd_stk.observations import (
@@ -42,5 +42,4 @@ __all__ = [
     "run_ddpg",
     "run_rlpd",
     "run_sac",
-    "train_dagger",
 ]
