@@ -2,9 +2,10 @@
 
 import copy
 import random
+from collections.abc import Callable
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any, Callable, Protocol
+from typing import Any, Protocol
 
 import gymnasium as gym
 import numpy as np
@@ -193,10 +194,6 @@ def run_dagger(
     if config.results_dir is not None:
         save_results(best_policy, results, config)
     return best_policy, results
-
-
-# Compatibility for code written before the run-function naming was unified.
-train_dagger = run_dagger
 
 
 def save_results(
