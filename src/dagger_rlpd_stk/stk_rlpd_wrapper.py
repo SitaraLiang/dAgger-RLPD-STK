@@ -1,3 +1,6 @@
+"""
+Same wrapper used for both RLPD and Dagger.
+"""
 from typing import Any
 
 import gymnasium as gym

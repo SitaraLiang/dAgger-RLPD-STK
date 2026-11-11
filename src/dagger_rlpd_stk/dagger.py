@@ -5,7 +5,7 @@ import random
 from collections.abc import Callable
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any, Protocol
+from typing import Protocol
 
 import gymnasium as gym
 import numpy as np
@@ -36,6 +36,8 @@ class DAggerPolicy(nn.Module):
 
     def __init__(self, state_dim: int, action_low: np.ndarray, action_high: np.ndarray):
         super().__init__()
+
+        # action = W · observation + b
         self.linear = nn.Linear(state_dim, len(action_low))
         self.register_buffer(
             "action_low", torch.as_tensor(action_low, dtype=torch.float32)
@@ -53,14 +55,6 @@ class DAggerPolicy(nn.Module):
             return self(state).cpu().numpy()
 
 
-def to_vector(observation: Any) -> Tensor:
-    """Convert the shared, already encoded observation to a feature vector."""
-    vector = np.asarray(observation, dtype=np.float32)
-    if vector.ndim != 1:
-        raise ValueError(f"expected a flat observation, got shape {vector.shape}")
-    return torch.as_tensor(vector.copy())
-
-
 def fit_ridge(
     observations: Tensor,
     actions: Tensor,
@@ -68,7 +62,12 @@ def fit_ridge(
     action_low: np.ndarray,
     action_high: np.ndarray,
 ) -> DAggerPolicy:
-    """Fit a linear policy by closed-form ridge regression."""
+    """
+    Fit a linear policy by closed-form ridge regression.
+    
+    x = [ normalised velocity (3), front (3), …, paths_start (15), …, items (15), kart (3),   ← 80 continuous numbers
+      one-hot phase, one-hot powerup, …, one-hot item types ]                              ← 0/1 numbers
+    """
     x, y = observations.double(), actions.double()
     x_mean, y_mean = x.mean(dim=0), y.mean(dim=0)
     x_centered, y_centered = x - x_mean, y - y_mean
@@ -133,7 +132,9 @@ def run_dagger(
             beta = config.beta_p**iteration
             terminated = truncated = False
             while not (terminated or truncated):
-                observation_vector = to_vector(observation)
+                observation_vector = torch.as_tensor(
+                    np.array(observation, dtype=np.float32)
+                )
                 expert_action = np.asarray(
                     expert(observation), dtype=np.float32
                 ).ravel()
