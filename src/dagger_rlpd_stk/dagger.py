@@ -129,20 +129,25 @@ def run_dagger(
     with SummaryWriter(timestamped_log_dir(log_dir)) as writer:
         progress = trange(config.n_iterations, desc="DAgger")
         for iteration in progress:
-            beta = config.beta_p**iteration
+            beta = config.beta_p**iteration # config.beta_p = 0
             terminated = truncated = False
             while not (terminated or truncated):
                 observation_vector = torch.as_tensor(
                     np.array(observation, dtype=np.float32)
                 )
+
+                #  Ask the expert for its action a on the current state and clip it to $[−1, 1]$.
                 expert_action = np.asarray(
                     expert(observation), dtype=np.float32
                 ).ravel()
                 expert_action = np.clip(
                     expert_action, env.action_space.low, env.action_space.high
                 )
+                # Add (state, a) to D. Every visited state gets the expert's label, whoever is driving.
                 dataset_obs.append(observation_vector)
                 dataset_actions.append(torch.as_tensor(expert_action.copy()))
+
+                #  iteration 1 the expert drives the whole lap, and from iteration 2 on, the learned policy drives the whole lap
                 if random.random() < beta:
                     action = expert_action
                 else:
@@ -153,7 +158,7 @@ def run_dagger(
                     action = policy.select_action(observation_vector)
                 observation, _, terminated, truncated, _ = env.step(action)
 
-            observation, _ = env.reset()
+            observation, _ = env.reset() # no seed, so the random generator continues
             expert.reset()
             observations = torch.stack(dataset_obs)
             actions = torch.stack(dataset_actions)
