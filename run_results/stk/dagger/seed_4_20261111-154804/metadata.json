@@ -1,0 +1,22 @@
+{
+  "algorithm": "dagger",
+  "seed": 4,
+  "track": "abyss",
+  "player_name": "Jean",
+  "offline_transitions": 100000,
+  "validation_episodes": 5,
+  "validation_seed": 5000,
+  "final_eval_episodes": 100,
+  "evaluation_seed": 10000,
+  "dagger_config": {
+    "seed": 4,
+    "n_iterations": 20,
+    "beta_p": 0.0,
+    "ridge_lambda": 0.001,
+    "results_dir": "run_results/stk/dagger/seed_4_20261111-154804/dagger"
+  },
+  "python": "3.13.4",
+  "platform": "macOS-14.1-arm64-arm-64bit-Mach-O",
+  "torch": "2.15.0",
+  "numpy": "2.5.4"
+}

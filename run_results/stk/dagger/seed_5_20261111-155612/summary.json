@@ -1,0 +1,10 @@
+{
+  "seed": 5,
+  "dagger": {
+    "mean_return": 78.59213867187495,
+    "return_std": 1.4210854715202004e-14,
+    "completion_rate": 1.0,
+    "mean_completion_length": 577.0,
+    "mean_distance": 1262.92138671875
+  }
+}
