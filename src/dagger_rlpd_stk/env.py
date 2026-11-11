@@ -14,7 +14,6 @@ from pystk2_gymnasium.wrappers import FlattenerWrapper
 
 TRACK = "abyss"
 MAX_EPISODE_STEPS = 1500  # The default time limit of the pystk2-gymnasium environments
-STEP_SECONDS = 0.1  # Documented default simulation time per step (pystk2 step_size)
 
 #: Order of the learner's actions: the flattener sorts the action keys
 CONTROLLED_ACTIONS = ("acceleration", "steer")

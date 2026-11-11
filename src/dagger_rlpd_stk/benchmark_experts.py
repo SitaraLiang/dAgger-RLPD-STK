@@ -1,6 +1,6 @@
 """Compare course agents alone on a track, with full and restricted controls.
 
-The course repository is cloned next to this project (see --course-repo).
+The course repository is in pystk_project/ at the project root (see --course-repo).
 """
 
 import argparse
@@ -8,12 +8,17 @@ import csv
 import importlib
 import os
 import sys
-import time
 from pathlib import Path
 
 import numpy as np
 
-from env import MAX_EPISODE_STEPS, STEP_SECONDS, TRACK, make_full_env, restrict_action
+from dagger_rlpd_stk.env import (
+    MAX_EPISODE_STEPS,
+    TRACK,
+    make_full_env,
+    restrict_action,
+)
+from dagger_rlpd_stk.stk_experiment import PROJECT_ROOT
 
 MODES = ("full", "restricted")
 FIELDS = [
@@ -22,10 +27,7 @@ FIELDS = [
     "seed",
     "status",
     "steps",
-    "game_seconds",
     "distance",
-    "wall_seconds",
-    "steps_per_second",
     "error",
 ]
 
@@ -43,7 +45,6 @@ def run_lap(env, agent_class, mode: str, seed: int) -> dict:
     steps = 0
     distance = 0.0
     terminated = truncated = False
-    start = time.perf_counter()
 
     while not (terminated or truncated):
         action = agent.choose_action(obs)
@@ -53,21 +54,17 @@ def run_lap(env, agent_class, mode: str, seed: int) -> dict:
         steps += 1
         distance = float(info["distance"])
 
-    wall_seconds = time.perf_counter() - start
     return {
-        "status": "finished" if terminated else "time_limit",
-        "steps": steps,
-        "game_seconds": round(steps * STEP_SECONDS, 1),
-        "distance": round(distance, 1),
-        "wall_seconds": round(wall_seconds, 2),
-        "steps_per_second": round(steps / wall_seconds, 1),
-        "error": "",
+        "status": "finished" if terminated else "time_limit", # finished or time limit: the finish rate
+        "steps": steps, #the lap time, the main metric, lower is better
+        "distance": round(distance, 1), # shows how far an unfinished lap got
+        "error": "", # records crashed laps
     }
 
 
 def print_summary(rows: list[dict]) -> None:
     print(
-        f"\n{'agent':<8}{'mode':<12}{'finished':<10}{'mean steps':<12}{'std':<8}{'mean s':<8}"
+        f"\n{'agent':<8}{'mode':<12}{'finished':<10}{'mean steps':<12}{'std':<8}"
     )
     for agent in sorted({row["agent"] for row in rows}):
         for mode in MODES:
@@ -79,17 +76,16 @@ def print_summary(rows: list[dict]) -> None:
             if steps:
                 print(
                     f"{agent:<8}{mode:<12}{finished:<10}{np.mean(steps):<12.1f}"
-                    f"{np.std(steps):<8.1f}{np.mean(steps) * STEP_SECONDS:<8.1f}"
+                    f"{np.std(steps):<8.1f}"
                 )
             else:
-                print(f"{agent:<8}{mode:<12}{finished:<10}{'-':<12}{'-':<8}{'-':<8}")
+                print(f"{agent:<8}{mode:<12}{finished:<10}{'-':<12}{'-':<8}")
 
 
 def main() -> None:
-    root = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--course-repo", type=Path, default=root.parent / "pystk_project"
+        "--course-repo", type=Path, default=PROJECT_ROOT / "pystk_project"
     )
     parser.add_argument("--teams", type=int, nargs="+", default=[1, 2, 3, 4, 5, 6, 7])
     parser.add_argument("--track", default=TRACK)
@@ -100,7 +96,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    output = (args.output or root / f"results/expert_{args.track}.csv").resolve()
+    output = (args.output or PROJECT_ROOT / f"results/expert_{args.track}.csv").resolve()
     src = args.course_repo.resolve() / "src"
     if not (src / "agents").is_dir():
         parser.error(f"course agents not found in {src}")

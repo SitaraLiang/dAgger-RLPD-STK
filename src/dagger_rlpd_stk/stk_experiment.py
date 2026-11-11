@@ -37,6 +37,10 @@ def make_stk_env(track: str, player_name: str, render_mode=None):
 
 
 def agent3_action(action) -> np.ndarray:
+    """
+    convert the dicrionary chosen by expert (agent 3) into learner's format 
+    [acceleration, steer] and range [-1, 1]
+    """
     acceleration = float(np.asarray(action["acceleration"]).item())
     steering = float(np.asarray(action["steer"]).item())
     return np.array([2.0 * acceleration - 1.0, steering], dtype=np.float32)
@@ -92,12 +96,16 @@ class Agent3DAggerExpert:
         self.policy_class = policy_class
         self.policy = policy_class(self.native_env)
 
-    def __call__(self, _encoded_observation):
+    def __call__(self, _encoded_observation): # ignore learner's vector
+        """
+        we ignore the learner's vector and expert asks the raw game env for current
+        state as a dictionary (same state the vector was made from)
+        """
         native_observation = self.native_env.get_observation(
             self.native_env.kart_ix,
             False,
         )
-        return agent3_action(self.policy.choose_action(native_observation))
+        return agent3_action(self.policy.choose_action(native_observation)) # [acceleration, steer] : expert label for current state.
 
     def reset(self):
         self.policy = self.policy_class(self.native_env)

@@ -40,6 +40,7 @@ dependencies = [
 [project.scripts]
 stk-dagger = "dagger_rlpd_stk.stk_dagger_experiment:main"
 stk-rlpd = "dagger_rlpd_stk.stk_rlpd_experiment:main"
+stk-benchmark = "dagger_rlpd_stk.benchmark_experts:main"
 
 [build-system]
 requires = ["uv_build>=0.13.6,<0.14.0"]
