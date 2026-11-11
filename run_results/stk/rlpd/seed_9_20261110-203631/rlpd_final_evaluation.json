@@ -1,0 +1,811 @@
+{
+  "summary": {
+    "mean_return": 80.30875134277345,
+    "return_std": 0.009426395061918372,
+    "completion_rate": 1.0,
+    "mean_completion_length": 559.94,
+    "mean_distance": 1263.0275134277344
+  },
+  "episodes": [
+    {
+      "seed": 10000,
+      "return": 80.31210937500003,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.12109375,
+      "position": 1
+    },
+    {
+      "seed": 10001,
+      "return": 80.28925781250004,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.892578125,
+      "position": 1
+    },
+    {
+      "seed": 10002,
+      "return": 80.31477050781244,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.147705078125,
+      "position": 1
+    },
+    {
+      "seed": 10003,
+      "return": 80.30861816406247,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.086181640625,
+      "position": 1
+    },
+    {
+      "seed": 10004,
+      "return": 80.30825195312504,
+      "length": 559,
+      "finished": true,
+      "distance": 1262.08251953125,
+      "position": 1
+    },
+    {
+      "seed": 10005,
+      "return": 80.32067871093754,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.206787109375,
+      "position": 1
+    },
+    {
+      "seed": 10006,
+      "return": 80.30993652343757,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.099365234375,
+      "position": 1
+    },
+    {
+      "seed": 10007,
+      "return": 80.32453613281253,
+      "length": 559,
+      "finished": true,
+      "distance": 1262.245361328125,
+      "position": 1
+    },
+    {
+      "seed": 10008,
+      "return": 80.31405029296879,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1405029296875,
+      "position": 1
+    },
+    {
+      "seed": 10009,
+      "return": 80.31970214843751,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.197021484375,
+      "position": 1
+    },
+    {
+      "seed": 10010,
+      "return": 80.30440673828126,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0440673828125,
+      "position": 1
+    },
+    {
+      "seed": 10011,
+      "return": 80.31463623046882,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1463623046875,
+      "position": 1
+    },
+    {
+      "seed": 10012,
+      "return": 80.3084594726563,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0845947265625,
+      "position": 1
+    },
+    {
+      "seed": 10013,
+      "return": 80.30745849609373,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0745849609375,
+      "position": 1
+    },
+    {
+      "seed": 10014,
+      "return": 80.30821533203125,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0821533203125,
+      "position": 1
+    },
+    {
+      "seed": 10015,
+      "return": 80.31948242187507,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.19482421875,
+      "position": 1
+    },
+    {
+      "seed": 10016,
+      "return": 80.29149169921874,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9149169921875,
+      "position": 1
+    },
+    {
+      "seed": 10017,
+      "return": 80.32082519531252,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.208251953125,
+      "position": 1
+    },
+    {
+      "seed": 10018,
+      "return": 80.3104614257812,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1046142578125,
+      "position": 1
+    },
+    {
+      "seed": 10019,
+      "return": 80.31572265624997,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1572265625,
+      "position": 1
+    },
+    {
+      "seed": 10020,
+      "return": 80.30786132812501,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.07861328125,
+      "position": 1
+    },
+    {
+      "seed": 10021,
+      "return": 80.32659912109375,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.2659912109375,
+      "position": 1
+    },
+    {
+      "seed": 10022,
+      "return": 80.30706787109384,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0706787109375,
+      "position": 1
+    },
+    {
+      "seed": 10023,
+      "return": 80.30957031250001,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.095703125,
+      "position": 1
+    },
+    {
+      "seed": 10024,
+      "return": 80.32371826171875,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.2371826171875,
+      "position": 1
+    },
+    {
+      "seed": 10025,
+      "return": 80.31022949218746,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.102294921875,
+      "position": 1
+    },
+    {
+      "seed": 10026,
+      "return": 80.29819335937499,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.98193359375,
+      "position": 1
+    },
+    {
+      "seed": 10027,
+      "return": 80.31966552734384,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1966552734375,
+      "position": 1
+    },
+    {
+      "seed": 10028,
+      "return": 80.29884033203122,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9884033203125,
+      "position": 1
+    },
+    {
+      "seed": 10029,
+      "return": 80.313134765625,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.13134765625,
+      "position": 1
+    },
+    {
+      "seed": 10030,
+      "return": 80.32110595703129,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.2110595703125,
+      "position": 1
+    },
+    {
+      "seed": 10031,
+      "return": 80.29907226562499,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.99072265625,
+      "position": 1
+    },
+    {
+      "seed": 10032,
+      "return": 80.32679443359382,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.2679443359375,
+      "position": 1
+    },
+    {
+      "seed": 10033,
+      "return": 80.31251220703126,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1251220703125,
+      "position": 1
+    },
+    {
+      "seed": 10034,
+      "return": 80.29862060546874,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9862060546875,
+      "position": 1
+    },
+    {
+      "seed": 10035,
+      "return": 80.3046264648438,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0462646484375,
+      "position": 1
+    },
+    {
+      "seed": 10036,
+      "return": 80.29942626953134,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9942626953125,
+      "position": 1
+    },
+    {
+      "seed": 10037,
+      "return": 80.30865478515628,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0865478515625,
+      "position": 1
+    },
+    {
+      "seed": 10038,
+      "return": 80.30504150390625,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0504150390625,
+      "position": 1
+    },
+    {
+      "seed": 10039,
+      "return": 80.32507324218753,
+      "length": 559,
+      "finished": true,
+      "distance": 1262.250732421875,
+      "position": 1
+    },
+    {
+      "seed": 10040,
+      "return": 80.32500000000002,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.25,
+      "position": 1
+    },
+    {
+      "seed": 10041,
+      "return": 80.317822265625,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.17822265625,
+      "position": 1
+    },
+    {
+      "seed": 10042,
+      "return": 80.29926757812505,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.99267578125,
+      "position": 1
+    },
+    {
+      "seed": 10043,
+      "return": 80.32027587890624,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.2027587890625,
+      "position": 1
+    },
+    {
+      "seed": 10044,
+      "return": 80.29776611328134,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9776611328125,
+      "position": 1
+    },
+    {
+      "seed": 10045,
+      "return": 80.30509033203127,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0509033203125,
+      "position": 1
+    },
+    {
+      "seed": 10046,
+      "return": 80.29844970703128,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9844970703125,
+      "position": 1
+    },
+    {
+      "seed": 10047,
+      "return": 80.31740722656245,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.174072265625,
+      "position": 1
+    },
+    {
+      "seed": 10048,
+      "return": 80.30703124999998,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0703125,
+      "position": 1
+    },
+    {
+      "seed": 10049,
+      "return": 80.29742431640626,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9742431640625,
+      "position": 1
+    },
+    {
+      "seed": 10050,
+      "return": 80.3133178710937,
+      "length": 559,
+      "finished": true,
+      "distance": 1262.1331787109375,
+      "position": 1
+    },
+    {
+      "seed": 10051,
+      "return": 80.3009521484375,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.009521484375,
+      "position": 1
+    },
+    {
+      "seed": 10052,
+      "return": 80.30415039062503,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.04150390625,
+      "position": 1
+    },
+    {
+      "seed": 10053,
+      "return": 80.31123046874995,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1123046875,
+      "position": 1
+    },
+    {
+      "seed": 10054,
+      "return": 80.2990844726563,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9908447265625,
+      "position": 1
+    },
+    {
+      "seed": 10055,
+      "return": 80.28077392578129,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.8077392578125,
+      "position": 1
+    },
+    {
+      "seed": 10056,
+      "return": 80.30670166015625,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0670166015625,
+      "position": 1
+    },
+    {
+      "seed": 10057,
+      "return": 80.31010742187493,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.10107421875,
+      "position": 1
+    },
+    {
+      "seed": 10058,
+      "return": 80.31066894531249,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.106689453125,
+      "position": 1
+    },
+    {
+      "seed": 10059,
+      "return": 80.32371826171875,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.2371826171875,
+      "position": 1
+    },
+    {
+      "seed": 10060,
+      "return": 80.31445312500001,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.14453125,
+      "position": 1
+    },
+    {
+      "seed": 10061,
+      "return": 80.32326660156257,
+      "length": 559,
+      "finished": true,
+      "distance": 1262.232666015625,
+      "position": 1
+    },
+    {
+      "seed": 10062,
+      "return": 80.30456542968753,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.045654296875,
+      "position": 1
+    },
+    {
+      "seed": 10063,
+      "return": 80.31649169921884,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1649169921875,
+      "position": 1
+    },
+    {
+      "seed": 10064,
+      "return": 80.28984374999995,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.8984375,
+      "position": 1
+    },
+    {
+      "seed": 10065,
+      "return": 80.31562500000003,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.15625,
+      "position": 1
+    },
+    {
+      "seed": 10066,
+      "return": 80.29813232421881,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9813232421875,
+      "position": 1
+    },
+    {
+      "seed": 10067,
+      "return": 80.31429443359377,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1429443359375,
+      "position": 1
+    },
+    {
+      "seed": 10068,
+      "return": 80.3133178710937,
+      "length": 559,
+      "finished": true,
+      "distance": 1262.1331787109375,
+      "position": 1
+    },
+    {
+      "seed": 10069,
+      "return": 80.30510253906255,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.051025390625,
+      "position": 1
+    },
+    {
+      "seed": 10070,
+      "return": 80.29271240234377,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9271240234375,
+      "position": 1
+    },
+    {
+      "seed": 10071,
+      "return": 80.29859619140622,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9859619140625,
+      "position": 1
+    },
+    {
+      "seed": 10072,
+      "return": 80.31677246093751,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.167724609375,
+      "position": 1
+    },
+    {
+      "seed": 10073,
+      "return": 80.307763671875,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.07763671875,
+      "position": 1
+    },
+    {
+      "seed": 10074,
+      "return": 80.31090087890624,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1090087890625,
+      "position": 1
+    },
+    {
+      "seed": 10075,
+      "return": 80.31051025390627,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.1051025390625,
+      "position": 1
+    },
+    {
+      "seed": 10076,
+      "return": 80.31857910156249,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.185791015625,
+      "position": 1
+    },
+    {
+      "seed": 10077,
+      "return": 80.30101318359377,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0101318359375,
+      "position": 1
+    },
+    {
+      "seed": 10078,
+      "return": 80.30085449218757,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.008544921875,
+      "position": 1
+    },
+    {
+      "seed": 10079,
+      "return": 80.29908447265619,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9908447265625,
+      "position": 1
+    },
+    {
+      "seed": 10080,
+      "return": 80.3185546875,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.185546875,
+      "position": 1
+    },
+    {
+      "seed": 10081,
+      "return": 80.30019531250004,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.001953125,
+      "position": 1
+    },
+    {
+      "seed": 10082,
+      "return": 80.30650634765624,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0650634765625,
+      "position": 1
+    },
+    {
+      "seed": 10083,
+      "return": 80.32218017578136,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.2218017578125,
+      "position": 1
+    },
+    {
+      "seed": 10084,
+      "return": 80.31323242187501,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.13232421875,
+      "position": 1
+    },
+    {
+      "seed": 10085,
+      "return": 80.30930175781253,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.093017578125,
+      "position": 1
+    },
+    {
+      "seed": 10086,
+      "return": 80.29974365234366,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9974365234375,
+      "position": 1
+    },
+    {
+      "seed": 10087,
+      "return": 80.31994628906246,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.199462890625,
+      "position": 1
+    },
+    {
+      "seed": 10088,
+      "return": 80.30654296875005,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0654296875,
+      "position": 1
+    },
+    {
+      "seed": 10089,
+      "return": 80.30621337890626,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0621337890625,
+      "position": 1
+    },
+    {
+      "seed": 10090,
+      "return": 80.3189208984375,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.189208984375,
+      "position": 1
+    },
+    {
+      "seed": 10091,
+      "return": 80.3090576171876,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.090576171875,
+      "position": 1
+    },
+    {
+      "seed": 10092,
+      "return": 80.30609130859386,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0609130859375,
+      "position": 1
+    },
+    {
+      "seed": 10093,
+      "return": 80.29725341796873,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9725341796875,
+      "position": 1
+    },
+    {
+      "seed": 10094,
+      "return": 80.30963134765626,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.0963134765625,
+      "position": 1
+    },
+    {
+      "seed": 10095,
+      "return": 80.30642089843745,
+      "length": 560,
+      "finished": true,
+      "distance": 1263.064208984375,
+      "position": 1
+    },
+    {
+      "seed": 10096,
+      "return": 80.2986694335938,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9866943359375,
+      "position": 1
+    },
+    {
+      "seed": 10097,
+      "return": 80.29742431640626,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9742431640625,
+      "position": 1
+    },
+    {
+      "seed": 10098,
+      "return": 80.29417724609371,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.9417724609375,
+      "position": 1
+    },
+    {
+      "seed": 10099,
+      "return": 80.29807128906246,
+      "length": 560,
+      "finished": true,
+      "distance": 1262.980712890625,
+      "position": 1
+    }
+  ]
+}

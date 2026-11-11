@@ -1,0 +1,10 @@
+{
+  "seed": 12,
+  "rlpd": {
+    "mean_return": 76.05246118164062,
+    "return_std": 19.11255951759686,
+    "completion_rate": 0.97,
+    "mean_completion_length": 568.5979381443299,
+    "mean_distance": 1260.0646118164063
+  }
+}
